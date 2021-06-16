@@ -19,7 +19,7 @@ const Playground = () => {
     <div>
       <div>Current count: {count}</div>
       <button onClick={() => setCount(count + 1)}>Increment</button>
-      <div>{isNight ? 'moon' : 'sun'}</div>
+      <div>{isNight ? ':moon:' : ':sun:'}</div>
       <button onClick={() => setIsNight(!isNight)}>Toggle day</button>
     </div>
   )
