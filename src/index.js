@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import Playground from './components/Playground'
+
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
   - Name is capitalized
@@ -33,11 +35,10 @@ function App(props) {
 }
 
 function CurrentDate() {
-  const currentDate = Date()
   return (
     <div>
       <div>Today is:</div>
-      <div>{currentDate}</div>
+      <div>{Date()}</div>
     </div>
   )
 }
