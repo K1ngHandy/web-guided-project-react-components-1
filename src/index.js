@@ -30,6 +30,7 @@ function App(props) {
       <h2>{props.instructor} welcomes you!</h2>
       <div>{props.happy ? 'We are having a great day!' : 'We need help!'}</div>
       <CurrentDate />
+      <Playground />
     </div>
   )
 }
