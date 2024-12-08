@@ -8,11 +8,35 @@
   - We never tamper with state: `healthPoints++`, `healthPoints--` or `someState.push(item)` is FORBIDDEN
   - We use the dedicated "state updater" to schedule a state change: `setHealthPoints(healthPoints + 1)`
 */
-import React from "react";
+import React, { useState } from "react";
 
 function Playground(props) {
+  const [count, setCount] = useState(0);
+  const [spinnerOn, setSpinnerOn] = useState(false);
+  const [weapon, setWeapon] = useState("Scissors");
+
+  if (spinnerOn) {
+    return (
+      <div className="container">
+        <h3>The spinner is {spinnerOn ? "ON" : "OFF"}</h3>
+        <button onClick={() => setSpinnerOn(false)}>Turn Spinner OFF</button>
+      </div>
+    )
+  }
+  
   return (
-    <h1>Playground!</h1>
+    <div>
+      <h1>Playground!</h1>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 3)}>Increment</button>
+      <button onClick={() => setCount(count - 3)}>Decrement</button>
+      <h3>The Spinner is {spinnerOn ? "On" : "Off"}</h3>
+      <button onClick={() => setSpinnerOn(!spinnerOn)}>Toggle Spinner</button>
+      <h3>The current weapon is: {weapon}</h3>
+      <button onClick={() => setWeapon("Scissors")}>Pick Scissors</button>
+      <button onClick={() => setWeapon("Rock")}>Pick Rock</button>
+      <button onClick={() => setWeapon("Paper")}>Pick Paper</button>
+    </div>
   )
 }
 
