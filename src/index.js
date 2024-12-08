@@ -22,14 +22,18 @@ import { render } from 'react-dom'
 */
 
 function App(props) {
+  const arrow = '~>'
+
   return (
     <div className='container'>
       <h1>Welcome to React, Web {props.cohort}</h1>
+      <h2>Coder: {props.name}, age: {props.age}</h2>
+      <p>Coding? {arrow} {props.coding}</p>
     </div>
   )
 }
 
 render(
-  <App cohort='37' />,
+  <App cohort='PT' name='Steve' age={37} coding='Yes' />,
   document.querySelector('#root')
 )
